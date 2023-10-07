@@ -1,30 +1,28 @@
+// Task 1
+// Create a function called updateEmployeeWithKeyAndValue with three parameters (employee, key, value)
+
 const employee = {name:"Sam", streetAddress:"12 Broadway"}
 
+function updateEmployeeWithKeyAndValue(employee, key, value){
+    const newObject = { ...employee};
+    newObject[key] = value;
+    return newObject;
+}
 
-function updateEmployeeWithKeyAndValue(obj, key, value) {
-    console.log(obj, key, value)
-    const newObj = { ...obj};
-    console.log(newObj)
-    newObj[key] = value;
-    console.log(newObj)
+
+function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value){
+    employee [key] = value;
+    return employee;
+}
+
+function deleteFromEmployeeByKey(employee, key){
+    const newObj = { ...employee};
+    delete newObj[key];
     return newObj;
-    
-}
-
-function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value) {
-    console.log(employee, value, key)
-    employee [key] = value;
-    return employee
 
 }
 
-function deleteFromEmployeeByKey (obj, key, value) {
-    const newEmployee = {...obj};
-    newEmployee [key] = value;
-    return newEmployee
-}
-
-function destructivelyDeleteFromEmployeeByKey(obj, key, value){
-    employee [key] = value;
-    return employee
+function destructivelyDeleteFromEmployeeByKey(employee, key){
+    delete employee [key];
+        return employee;
 }
